@@ -6,8 +6,8 @@ let input=document.querySelector("input")
 console.log(input)
 let checkBtn=document.querySelector(".check")
 let newGameBtn=document.querySelector(".new-game")
-let secretNumber = getRandomNumber(1, 10)
-let attempts=3
+let secretNumber = getRandomNumber(10, 100)
+let attempts=10
 newGameBtn.disabled = true
 checkBtn.onclick=function() {
     let userNumber=input.value
@@ -34,12 +34,12 @@ checkBtn.onclick=function() {
     
 }
     newGameBtn.onclick = function() {
-        attempts = 3
+        attempts = 10
         checkBtn.disabled = false
         newGameBtn.disabled = true
         attemptsSpan.textContent = attempts
         hintSpan.textContent = "Я буду подсказывать"
-        secretNumber = getRandomNumber(1,10)
+        secretNumber = getRandomNumber(10,100)
     }
     function getRandomNumber (min, max) {
        return Math.floor(Math.random() * (max - min + 1)) + min;
